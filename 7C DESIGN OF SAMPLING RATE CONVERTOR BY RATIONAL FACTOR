@@ -1,0 +1,18 @@
+clc; 
+clear all;  
+close all;   
+Fx=20;     
+Tx=1/Fx;     
+tx=0:Tx:1;
+x=0.7*sin(2*pi*tx); 
+y=resample(x,5,4); 
+ty=(0:(length(y)-1))*4*Tx/5;  
+figure(1) ;
+stem(tx,x,'*'); 
+hold on;
+stem(ty,y,'-.r') ;
+title('Original sequence and Sampling rate conversion by factor I/D') ;
+legend('Original sequence Resampled signal by rational factor I/D'); 
+xlabel('Time (s)'); 
+ylabel('Amplitude');
+axis([0,1,-1,1]);
